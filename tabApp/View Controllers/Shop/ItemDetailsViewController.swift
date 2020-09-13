@@ -37,7 +37,6 @@ class ItemDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         cell.options = options[indexPath.row]["option_list"] as! [String]
         cell.optionField.inputView = cell.picker
         cell.optionField.inputAccessoryView = cell.toolBar
-        //cell.optionField.text = cell.optionFieldText
         
         optionLabels.append(cell.optionName)
         userSelectionFields.append(cell.optionField)
@@ -48,8 +47,6 @@ class ItemDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
-        //let backBarButton = UIBarButtonItem(title: "Items", style: .plain, target: nil, action: nil)
-        //navigationItem.backBarButtonItem = backBarButton
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,11 +92,7 @@ class ItemDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "addToCart" {
             let controller: AddToCartLoaderViewController
             controller = segue.destination as! AddToCartLoaderViewController

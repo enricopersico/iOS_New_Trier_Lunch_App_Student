@@ -66,27 +66,10 @@ class OrderItemsViewController: UIViewController {
                 document.reference.updateData(["cart": []])
             }
         }
-        }/*
-        Firestore.firestore().collection("orders").whereField("user", isEqualTo: UserDefaults.standard.string(forKey: "user")!).addSnapshotListener { querySnapshot, error in
-            guard let documents = querySnapshot?.documents else {
-                print((String(describing: error)))
-                let networkError = NoConnectionViewController()
-                networkError.modalPresentationStyle = .fullScreen
-                self.present(networkError, animated: true, completion: nil)
-                return
-            }
-            for doc in documents {
-                if (doc["status"]! as! String) == "Finished" {
-                    
-            }
-            }
-        }*/
+        }
     }
     
     @IBAction func goToOrdersClicked(_ sender: Any) {
-        /*let orders = self.storyboard?.instantiateViewController(withIdentifier: "orders")
-        orders?.modalPresentationStyle = .overCurrentContext
-        self.present(orders!, animated: true, completion: nil)*/
         self.tabBarController?.selectedIndex = 2
     }
     

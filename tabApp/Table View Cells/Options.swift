@@ -13,14 +13,13 @@ class Options: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     let picker = UIPickerView()
     let toolBar = UIToolbar()
     
+    var options = [String]()
+    
     @IBOutlet weak var optionField: UITextField!
     @IBOutlet weak var optionName: UILabel!
     
-    var options = [String]()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         picker.delegate = self
         picker.dataSource = self
         let doneButton =  UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(doneClicked))
@@ -37,7 +36,6 @@ class Options: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //optionFieldText = options[row]
         optionField.text = options[row]
     }
 
@@ -52,5 +50,4 @@ class Options: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return options[row]
     }
-    
 }

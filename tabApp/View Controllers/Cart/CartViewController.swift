@@ -180,7 +180,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         refreshControl.addTarget(self, action: #selector(self.loadCart), for: .valueChanged)
         tableView.refreshControl = refreshControl
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func placeOrderClicked(_ sender: Any) {
@@ -194,13 +193,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "cartToOrder" {
             let controller: OrderItemsViewController
             controller = segue.destination as! OrderItemsViewController

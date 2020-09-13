@@ -21,16 +21,4 @@ class CartItems: UITableViewCell {
     var imgurl: String!
     var itemName: String!
     var options = [[String : Any]]()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-    
-    
 }
