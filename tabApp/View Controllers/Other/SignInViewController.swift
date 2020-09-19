@@ -58,12 +58,9 @@ class SignInViewController: UIViewController {
             print(err)
         } else {
             if (snapshot?.documents)!.count == 1 {
-                Auth.auth().signInAnonymously() { (authResult, error) in
-                    guard let uid = authResult?.user else {return}
-                    UserDefaults.standard.set(true, forKey: "signedIn")
-                    UserDefaults.standard.set(self.username.text!, forKey: "user")
-                    self.performSegue(withIdentifier: "signIn", sender: self)
-                }
+                UserDefaults.standard.set(true, forKey: "signedIn")
+                UserDefaults.standard.set(self.username.text!, forKey: "user")
+                self.performSegue(withIdentifier: "signIn", sender: self)
             }
             else {
                 let signInAlert = UIAlertController(title: "Wrong Username/Password", message: "Please reenter your username and password.", preferredStyle: UIAlertController.Style.alert)
